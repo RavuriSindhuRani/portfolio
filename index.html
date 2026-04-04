@@ -389,32 +389,38 @@
     
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form>
+        <form action="https://hooks.zapier.com/hooks/catch/27086125/unvg83n/" id="contactForm">
       
           <div class="mb-3">
             <label for="name" class="form-label text-dark">Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
           </div>
 
           <div class="mb-3">
             <label for="email" class="form-label text-dark">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
           </div>
 
           <div class="mb-3">
             <label for="message" class="form-label text-dark">Message</label>
-            <textarea class="form-control" id="message" rows="5" placeholder="Write your message here"></textarea>
+            <textarea class="form-control" id="message" rows="5" placeholder="Write your message here" name="message" required></textarea>
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary text-dark fw-bold px-4 border-5 rounded-5">Send Message</button>
+            <button type="submit" class="btn btn-primary text-dark fw-bold px-4 border-5 rounded-5" id="mybtn" onclick="onsubmit()">Send Message</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
-
+<div id="response" class=" d-flex justify-content-center text-success"></div>
+<script>
+    document.getElementById("contactForm").onsubmit = function(event) {
+      event.preventDefault(); // Prevents page reload
+      document.getElementById("response").innerHTML = "<h1>Thank You For Reaching Out</h1>";
+    }
+  </script>
 
   <section>
   <footer class="bg-black text-white text-center p-3 ">
