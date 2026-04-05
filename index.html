@@ -8,8 +8,44 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css" integrity="sha512-2bBQCjcnw658Lho4nlXJcc6WkV/UxpE/sAokbXPxQNGqmNdQrWqtw26Ns9kFF/yG792pKR1Sx8/Y1Lf1XN4GKA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
+<style>
+  .navbar {
+  background: linear-gradient(to right, #074c68, #13242a, #3e4f56);
+}
+.navbar-brand {
+  color: #ffffff;             
+  font-weight: bold;
+}
+.navbar .nav-link{
+  color: #ffffff;               
+  transition: color 0.3s ease; 
+}
+
+.navbar .nav-link:hover {
+  color: #ffcc00; 
+}
+
+.section {
+  transition: background 0.5s ease;
+}
+.section:hover {
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+}
+
+.footer-icons a {
+  color: white;
+  transition: background 0.3s, color 0.3s;
+}
+.footer-icons a:hover {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+</style>
 <body>
-  <nav class="navbar navbar-expand-lg bg-light shadow-sm sticky-top navbar-light">
+  <nav class="navbar navbar-expand-lg bg-info shadow-sm sticky-top navbar-white">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold m-2" href="#home">Ravuri Sindhurani</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynav">
@@ -52,37 +88,29 @@
       </div>
        <style>
         .carousel-item img {
-  width: 100%;
-  height: 500px; 
-  object-fit: cover;
-}
-
-@media (max-width: 768px) {
-  .carousel-item img {
-    height: 300px; 
-    width: 300px;
-  }
-  .carousel-caption {
-    font-size: 1rem;
-    padding: 10px;
-  }
-}
-.carousel-control-prev,
-.carousel-control-next {
-  width: auto;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.carousel-control-prev { left: 15px; }
-.carousel-control-next { right: 15px; }
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 50%;
-  padding: 10px;
-}
+          width: 100%;
+          height: 500px; 
+          object-fit: cover;
+        }
+        @media (max-width: 768px) {
+          .carousel-caption {
+            font-size: 1rem;
+            padding: 10px;
+          }
+          .carousel-control-prev,
+          .carousel-control-next {
+            width: auto;
+            top: 50%;
+            transform: translateY(-50%);
+          }}
+          .carousel-control-prev { left: 15px; }
+          .carousel-control-next { right: 15px; }
+          .carousel-control-prev-icon,
+          .carousel-control-next-icon {
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            padding: 10px
+          }
 
 </style>
 
@@ -458,7 +486,7 @@
     }
   </script>
 
-  <section>
+  <section class="footer-icons">
   <footer class="bg-black text-white text-center p-3 ">
     <div class="container text-start">
         <h5>Ravuri Sindhurani</h5>
