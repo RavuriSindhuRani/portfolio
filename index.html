@@ -453,7 +453,7 @@
     
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <form action="https://hooks.zapier.com/hooks/catch/27086125/unvg83n/" id="contactForm">
+        <form action="https://hooks.zapier.com/hooks/catch/27086125/unvg83n/" id="contactForm" method="post">
       
           <div class="mb-3">
             <label for="name" class="form-label text-dark">Name</label>
@@ -480,6 +480,26 @@
 </section>
 <div id="response" class=" d-flex justify-content-center text-success"></div>
 <script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = {
+    name: e.target.name.value,
+    email: e.target.email.value,
+    message: e.target.message.value
+  };
+
+  fetch("https://hooks.zapier.com/hooks/catch/xxxxxx", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(formData)
+  })
+  .then(response => response.json())
+  .then(data => console.log("Success:", data))
+  .catch(error => console.error("Error:", error));
+});
+
+
     document.getElementById("contactForm").onsubmit = function(event) {
       event.preventDefault(); // Prevents page reload
       document.getElementById("response").innerHTML = "<h1>Thank You For Reaching Out</h1>";
