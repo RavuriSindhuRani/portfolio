@@ -1,0 +1,125 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: var(--space-12);
+}
+
+.contact__form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.field label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.field input,
+.field textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: #F87171;
+}
+
+.field__error {
+  font-size: 0.78rem;
+  color: #F87171;
+}
+
+.contact__submit {
+  align-self: flex-start;
+  margin-top: var(--space-2);
+}
+
+.contact__submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+  transform: none;
+}
+
+.contact__status {
+  font-size: 0.88rem;
+}
+
+.contact__status--success {
+  color: #34D399;
+}
+
+.contact__status--error {
+  color: #F87171;
+}
+
+.contact__aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact__aside-text {
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.contact__socials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.contact__social:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  transform: translateX(4px);
+}
+
+@media (max-width: 860px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}

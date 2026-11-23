@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14110E"/>
+      <stop offset="50%" stop-color="#1C1814"/>
+      <stop offset="100%" stop-color="#241E18"/>
+    </linearGradient>
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C89B3C"/>
+      <stop offset="100%" stop-color="#4C8577"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E0B857"/>
+      <stop offset="100%" stop-color="#C89B3C"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#6FC4B0"/>
+      <stop offset="100%" stop-color="#2F6656"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Subtle grid pattern -->
+  <g opacity="0.08" stroke="#F3EEE5" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+    <line x1="0" y1="450" x2="800" y2="450"/>
+    <line x1="80" y1="0" x2="80" y2="500"/>
+    <line x1="160" y1="0" x2="160" y2="500"/>
+    <line x1="240" y1="0" x2="240" y2="500"/>
+    <line x1="320" y1="0" x2="320" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="480" y1="0" x2="480" y2="500"/>
+    <line x1="560" y1="0" x2="560" y2="500"/>
+    <line x1="640" y1="0" x2="640" y2="500"/>
+    <line x1="720" y1="0" x2="720" y2="500"/>
+  </g>
+
+  <!-- CRM Dashboard UI Mockup Frame -->
+  <rect x="70" y="60" width="660" height="380" rx="16" fill="#1A1613" stroke="#C89B3C" stroke-opacity="0.3" stroke-width="2"/>
+  
+  <!-- Dashboard Topbar -->
+  <rect x="70" y="60" width="660" height="42" rx="16" fill="#211B16"/>
+  <rect x="70" y="90" width="660" height="12" fill="#211B16"/>
+  <circle cx="96" cy="81" r="5" fill="#EF4444"/>
+  <circle cx="112" cy="81" r="5" fill="#F59E0B"/>
+  <circle cx="128" cy="81" r="5" fill="#10B981"/>
+  <text x="150" y="86" fill="#AFA495" font-family="'Space Grotesk', sans-serif" font-size="13" font-weight="600">Real Estate CRM — Leads, Property Management &amp; 3D Plots</text>
+  <rect x="610" y="72" width="100" height="18" rx="9" fill="url(#gold)" opacity="0.85"/>
+  <text x="632" y="85" fill="#14110E" font-family="sans-serif" font-size="10" font-weight="bold">MERN STACK</text>
+
+  <!-- Left Sidebar -->
+  <rect x="85" y="115" width="140" height="305" rx="10" fill="#211B16" stroke="rgba(240, 227, 204, 0.08)"/>
+  <rect x="100" y="135" width="110" height="22" rx="6" fill="#C89B3C" fill-opacity="0.2"/>
+  <text x="110" y="150" fill="#E0B857" font-family="sans-serif" font-size="11" font-weight="bold">Overview</text>
+  <rect x="100" y="167" width="110" height="20" rx="6" fill="transparent"/>
+  <text x="110" y="181" fill="#AFA495" font-family="sans-serif" font-size="11">Lead Tracking</text>
+  <rect x="100" y="197" width="110" height="20" rx="6" fill="transparent"/>
+  <text x="110" y="211" fill="#AFA495" font-family="sans-serif" font-size="11">Properties</text>
+  <rect x="100" y="227" width="110" height="20" rx="6" fill="transparent"/>
+  <text x="110" y="241" fill="#AFA495" font-family="sans-serif" font-size="11">3D Plot Layout</text>
+  <rect x="100" y="257" width="110" height="20" rx="6" fill="transparent"/>
+  <text x="110" y="271" fill="#AFA495" font-family="sans-serif" font-size="11">Customers</text>
+
+  <!-- Metric Cards -->
+  <rect x="240" y="115" width="145" height="75" rx="10" fill="#211B16" stroke="rgba(200, 155, 60, 0.2)"/>
+  <text x="252" y="137" fill="#AFA495" font-family="sans-serif" font-size="11">Total Leads</text>
+  <text x="252" y="168" fill="#F3EEE5" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="bold">1,248</text>
+
+  <rect x="400" y="115" width="145" height="75" rx="10" fill="#211B16" stroke="rgba(76, 133, 119, 0.2)"/>
+  <text x="412" y="137" fill="#AFA495" font-family="sans-serif" font-size="11">Listed Plots</text>
+  <text x="412" y="168" fill="#6FC4B0" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="bold">342</text>
+
+  <rect x="560" y="115" width="150" height="75" rx="10" fill="#211B16" stroke="rgba(200, 155, 60, 0.2)"/>
+  <text x="572" y="137" fill="#AFA495" font-family="sans-serif" font-size="11">Deals Closed</text>
+  <text x="572" y="168" fill="#E0B857" font-family="'Space Grotesk', sans-serif" font-size="22" font-weight="bold">94.8%</text>
+
+  <!-- Interactive 3D Plot Layout Visualization Panel -->
+  <rect x="240" y="205" width="470" height="215" rx="10" fill="#14110E" stroke="rgba(200, 155, 60, 0.25)"/>
+  <text x="258" y="228" fill="#AFA495" font-family="sans-serif" font-size="12" font-weight="600">Interactive 3D Plot Visualization &amp; Layout Grid</text>
+
+  <!-- Isometric 3D Plot Blocks -->
+  <g transform="translate(390, 250)">
+    <!-- Plot 1 -->
+    <polygon points="0,40 50,15 100,40 50,65" fill="#4C8577" opacity="0.9"/>
+    <polygon points="0,40 50,65 50,90 0,65" fill="#2F6656"/>
+    <polygon points="50,65 100,40 100,65 50,90" fill="#3D7D6C"/>
+
+    <!-- Plot 2 (elevated / active) -->
+    <polygon points="70,0 120,-25 170,0 120,25" fill="#E0B857" opacity="0.95"/>
+    <polygon points="70,0 120,25 120,55 70,30" fill="#C89B3C"/>
+    <polygon points="120,25 170,0 170,30 120,55" fill="#B08630"/>
+
+    <!-- Plot 3 -->
+    <polygon points="-70,0 -20,-25 30,0 -20,25" fill="#4C8577" opacity="0.7"/>
+    <polygon points="-70,0 -20,25 -20,50 -70,25" fill="#2F6656"/>
+    <polygon points="-20,25 30,0 30,25 -20,50" fill="#3D7D6C"/>
+
+    <!-- Plot 4 -->
+    <polygon points="0,-40 50,-65 100,-40 50,-15" fill="#211B16" stroke="#4C8577" stroke-width="1.5"/>
+    <polygon points="0,-40 50,-15 50,5 0,-20" fill="#1A1613" stroke="#4C8577" stroke-width="1"/>
+    <polygon points="50,-15 100,-40 100,-20 50,5" fill="#211B16" stroke="#4C8577" stroke-width="1"/>
+
+    <text x="95" y="10" fill="#14110E" font-family="sans-serif" font-size="9" font-weight="bold">Plot #42</text>
+  </g>
+</svg>

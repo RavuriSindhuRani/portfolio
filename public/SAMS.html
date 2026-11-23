@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Attendance Management System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .container {
+      margin-top: 50px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .table thead {
+      background-color: #0d6efd;
+      color: white;
+    }
+    .status-present {
+      color: green;
+      font-weight: bold;
+    }
+    .status-absent {
+      color: red;
+      font-weight: bold;
+    }
+    .btn-present {
+      background-color: #28a745;
+      color: white;
+    }
+    .btn-absent {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="text-center mb-4">📋 Student Attendance Management System</h2>
+
+    <!-- Date Selector -->
+    <div class="d-flex justify-content-center align-items-center mb-3">
+      <label for="attendanceDate" class="me-2 fw-bold">Select Date:</label>
+      <input type="date" id="attendanceDate" class="form-control w-25">
+    </div>
+
+    <!-- Add Student Form -->
+    <form id="studentForm" class="d-flex justify-content-center mb-3">
+      <input type="text" id="studentName" class="form-control w-50 me-2" placeholder="Enter student name" required>
+      <button type="submit" class="btn btn-primary">Add Student</button>
+    </form>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" class="form-control mb-3" placeholder="🔍 Search by roll number or student name">
+
+    <!-- Attendance Table -->
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle text-center">
+        <thead>
+          <tr>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Attendance</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const studentForm = document.getElementById('studentForm');
+    const studentNameInput = document.getElementById('studentName');
+    const tableBody = document.getElementById('tableBody');
+    const searchBar = document.getElementById('searchBar');
+    const attendanceDate = document.getElementById('attendanceDate');
+
+    let students = JSON.parse(localStorage.getItem('students')) || [];
+    let attendanceRecords = JSON.parse(localStorage.getItem('attendanceRecords')) || {};
+    let rollNo = students.length ? students[students.length - 1].roll + 1 : 1;
+
+    // Save to LocalStorage
+    function saveData() {
+      localStorage.setItem('students', JSON.stringify(students));
+      localStorage.setItem('attendanceRecords', JSON.stringify(attendanceRecords));
+    }
+
+    // Add Student
+    studentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = studentNameInput.value.trim();
+      if (name === "") return;
+
+      const student = { roll: rollNo++, name: name };
+      students.push(student);
+      saveData();
+      studentNameInput.value = "";
+
+      // Refresh the table if date is selected
+      if (attendanceDate.value) {
+        displayStudents();
+      }
+    });
+
+    // Display students
+    function displayStudents(filtered = students) {
+      const selectedDate = attendanceDate.value;
+      tableBody.innerHTML = "";
+
+      if (!students.length) {
+        tableBody.innerHTML = `<tr><td colspan="5" class="text-muted">No students added yet.</td></tr>`;
+        return;
+      }
+
+      if (!selectedDate) {
+        tableBody.innerHTML = `<tr><td colspan="5" class="text-muted">Please select a date to mark attendance.</td></tr>`;
+        return;
+      }
+
+      const todayAttendance = attendanceRecords[selectedDate] || [];
+
+      filtered.forEach((student, index) => {
+        const record = todayAttendance.find(r => r.roll === student.roll);
+        const status = record ? record.status : "Not Marked";
+
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${student.roll}</td>
+          <td>${student.name}</td>
+          <td>
+            <button class="btn btn-sm btn-present me-1" onclick="markAttendance(${student.roll}, 'Present')">Present</button>
+            <button class="btn btn-sm btn-absent" onclick="markAttendance(${student.roll}, 'Absent')">Absent</button>
+          </td>
+          <td class="${status === 'Present' ? 'status-present' : status === 'Absent' ? 'status-absent' : ''}">
+            ${status}
+          </td>
+          <td>
+            <button class="btn btn-sm btn-danger" onclick="deleteStudent(${index})">Delete</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Mark attendance
+    function markAttendance(roll, status) {
+      const selectedDate = attendanceDate.value;
+      if (!selectedDate) {
+        alert("Please select a date first!");
+        return;
+      }
+
+      if (!attendanceRecords[selectedDate]) {
+        attendanceRecords[selectedDate] = [];
+      }
+
+      const recordIndex = attendanceRecords[selectedDate].findIndex(r => r.roll === roll);
+      if (recordIndex !== -1) {
+        attendanceRecords[selectedDate][recordIndex].status = status;
+      } else {
+        attendanceRecords[selectedDate].push({ roll, status });
+      }
+
+      saveData();
+      displayStudents();
+    }
+
+    // Delete student
+    function deleteStudent(index) {
+      if (confirm("Are you sure you want to delete this student?")) {
+        const deletedRoll = students[index].roll;
+        students.splice(index, 1);
+
+        // Remove from all attendance records
+        for (let date in attendanceRecords) {
+          attendanceRecords[date] = attendanceRecords[date].filter(r => r.roll !== deletedRoll);
+        }
+
+        saveData();
+        displayStudents();
+      }
+    }
+
+    // Search functionality
+    searchBar.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      const filtered = students.filter(student =>
+        student.name.toLowerCase().includes(query) ||
+        student.roll.toString().includes(query)
+      );
+      displayStudents(filtered);
+    });
+
+    // Update table when date changes
+    attendanceDate.addEventListener('change', () => displayStudents());
+
+    // Initial render (even if no date selected)
+    displayStudents();
+  </script>
+</body>
+</html>

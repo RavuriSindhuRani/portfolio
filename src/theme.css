@@ -1,0 +1,125 @@
+:root {
+  /* ===== Dark theme (default) — warm ink & antique gold, museum-teal counterpoint ===== */
+  --bg: #14110E;
+  --bg-secondary: #1A1613;
+  --card: #211B16;
+  --card-hover: #271F19;
+  --accent: #C89B3C;
+  --accent-2: #4C8577;
+  --accent-soft: rgba(200, 155, 60, 0.14);
+  --accent-2-soft: rgba(76, 133, 119, 0.14);
+  --text: #F3EEE5;
+  --text-muted: #AFA495;
+  --text-faint: #786E60;
+  --border: rgba(240, 227, 204, 0.09);
+  --border-strong: rgba(240, 227, 204, 0.16);
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.28);
+  --shadow-md: 0 8px 30px rgba(0,0,0,0.4);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 40px rgba(200,155,60,0.16);
+  --shadow-accent-sm: 0 8px 24px rgba(200,155,60,0.28);
+  --shadow-accent-lg: 0 12px 32px rgba(200,155,60,0.4);
+
+  --grid-line: rgba(243, 238, 229, 0.03);
+  --glow-1: radial-gradient(circle, rgba(200,155,60,0.22), transparent 70%);
+  --glow-2: radial-gradient(circle, rgba(76,133,119,0.18), transparent 70%);
+
+  --nav-bg: rgba(20, 17, 14, 0.4);
+  --nav-bg-scrolled: rgba(20, 17, 14, 0.82);
+  --nav-bg-mobile: rgba(20, 17, 14, 0.97);
+
+  /* Fixed "IDE" tokens for the hero code panel — stays dark in both themes,
+     an intentional, unchanging signature element */
+  --code-bg: #14161F;
+  --code-bg-secondary: #0D0F15;
+  --code-border: rgba(255, 255, 255, 0.08);
+  --code-text: #F5F7FA;
+  --code-muted: #9CA3AF;
+  --code-faint: #6B7280;
+  --code-accent: #C89B3C;
+  --code-accent-2: #4C8577;
+  --code-prop: #A5B4FC;
+  --code-str: #86EFAC;
+
+  /* Gradients */
+  --gradient-accent: linear-gradient(135deg, var(--accent), var(--accent-2));
+  --gradient-radial: radial-gradient(circle, rgba(200,155,60,0.14), transparent 70%);
+  --gradient-vivid: linear-gradient(120deg, var(--accent) 0%, #E0B857 25%, var(--accent-2) 60%, #6FC4B0 100%);
+  --gradient-mesh: radial-gradient(circle at 15% 20%, rgba(200,155,60,0.16), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(76,133,119,0.14), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(200,155,60,0.08), transparent 45%);
+  --section-tint: color-mix(in srgb, var(--bg-secondary) 92%, transparent);
+  --section-tint-alt: color-mix(in srgb, var(--bg) 90%, transparent);
+
+  /* Typography */
+  --font-display: "Space Grotesk", "Inter", -apple-system, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Spacing scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 999px;
+
+  /* Layout */
+  --max-width: 1180px;
+  --nav-height: 76px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 0.2s;
+  --duration-med: 0.5s;
+
+  color-scheme: dark;
+}
+
+/* ===== Light theme — warm parchment, ink text, same gold/teal family ===== */
+[data-theme="light"] {
+  --bg: #FBF7EE;
+  --bg-secondary: #F4EEE0;
+  --card: #FFFFFF;
+  --card-hover: #FAF5E8;
+  --accent: #A8791E;
+  --accent-2: #2F6656;
+  --accent-soft: rgba(168, 121, 30, 0.1);
+  --accent-2-soft: rgba(47, 102, 86, 0.1);
+  --text: #241E17;
+  --text-muted: #6B5F4E;
+  --text-faint: #978A72;
+  --border: rgba(36, 30, 20, 0.09);
+  --border-strong: rgba(36, 30, 20, 0.16);
+
+  --shadow-sm: 0 2px 8px rgba(80,66,40,0.08);
+  --shadow-md: 0 8px 30px rgba(80,66,40,0.12);
+  --shadow-lg: 0 20px 60px rgba(80,66,40,0.16);
+  --shadow-glow: 0 0 40px rgba(168,121,30,0.14);
+  --shadow-accent-sm: 0 8px 24px rgba(168,121,30,0.2);
+  --shadow-accent-lg: 0 12px 32px rgba(168,121,30,0.3);
+
+  --grid-line: rgba(36, 30, 20, 0.035);
+  --glow-1: radial-gradient(circle, rgba(168,121,30,0.16), transparent 70%);
+  --glow-2: radial-gradient(circle, rgba(47,102,86,0.14), transparent 70%);
+
+  --nav-bg: rgba(251, 247, 238, 0.55);
+  --nav-bg-scrolled: rgba(251, 247, 238, 0.88);
+  --nav-bg-mobile: rgba(251, 247, 238, 0.97);
+
+  --gradient-radial: radial-gradient(circle, rgba(168,121,30,0.12), transparent 70%);
+
+  color-scheme: light;
+}

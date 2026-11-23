@@ -1,0 +1,26 @@
+@import "./ProjectModal.css";
+
+.contact-modal {
+  max-width: 880px;
+}
+
+.contact-modal__body {
+  padding: var(--space-8);
+}
+
+.contact-modal__title {
+  font-size: 1.6rem;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.contact-modal__subtitle {
+  color: var(--text-muted);
+  max-width: 520px;
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 640px) {
+  .contact-modal__body {
+    padding: var(--space-6);
+  }
+}

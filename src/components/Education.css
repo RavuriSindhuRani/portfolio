@@ -1,0 +1,95 @@
+.timeline {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  padding-left: var(--space-8);
+}
+
+.timeline__line {
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(var(--accent), var(--accent-2));
+  transform-origin: top;
+  border-radius: var(--radius-full);
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--space-12);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -33px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent-2);
+  box-shadow: 0 0 0 4px var(--bg-secondary);
+}
+
+.timeline__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: border-color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.timeline__card:hover {
+  border-color: var(--border-strong);
+  transform: translateX(4px);
+}
+
+.timeline__year {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-2);
+  margin-bottom: var(--space-2);
+}
+
+.timeline__institution {
+  font-size: 1.15rem;
+  margin-bottom: var(--space-1);
+}
+
+.timeline__program {
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.timeline__result {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.timeline__desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 560px) {
+  .timeline {
+    padding-left: var(--space-6);
+  }
+  .timeline__dot {
+    left: -25px;
+  }
+}
